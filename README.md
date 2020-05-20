@@ -2,7 +2,8 @@
 
 Python Cheatsheet 
 
-Contents
+#Contents
+
 Python Types: Numbers,Strings,Boolean,Lists,Dictionaries, Tuples,Sets,None
 
 Python Basics: Comparison Operators,Logical Operators,Loops,Range,Enumerate,Counter,Named Tuple,OrderedDict
@@ -11,7 +12,7 @@ Functions: Functions,Lambda,Comprehensions,Map,Filter,Reduce,Ternary,Any,All,Clo
 
 Advanced Python: Modules,Iterators,Generators,Decorators,Class,Exceptions,Command Line Arguments,File IO,Useful Libraries
 
-Numbers
+#Numbers
 python's 2 main types for Numbers is int and float (or integers and floating point numbers)
 
 type(1)   #int 
@@ -270,7 +271,7 @@ None is used for absence of a value and can be used to show nothing has been ass
 type(None) #NoneType
 a = None
 
-Comparison Operators
+#Comparison Operators
 ==                   # equal values
 !=                   # not equal
 >                    # left operand is greater than right operand
@@ -279,7 +280,7 @@ Comparison Operators
 <=                   # left operand is less than or equal to right operand
 <element> is <element> # check if two operands refer to same object in memory
 
-Logical Operators
+#Logical Operators
 1 < 2 and 4 > 1 # True
 1 > 3 or 4 > 1  # True
 1 is not 4      # True
@@ -293,7 +294,7 @@ elif <condition that evaluates to boolean>:
 else:
   # perform action3
   
-Loops
+#Loops
 my_list = [1,2,3]
 my_tuple = (1,2,3)
 my_list2 = [(1,2), (3,4), (5,6)]
@@ -327,10 +328,12 @@ msg = ''
 while msg != 'quit':
     msg = input("What should I do?")
     print(msg)
+    
 Range
 range(10)          # range(0, 10) --> 0 to 9
 range(1,10)        # range(1, 10)
 list(range(0,10,2))# [0, 2, 4, 6, 8]
+
 Enumerate
 for i, el in enumerate('helloo'):
   print(f'{i}, {el}')
@@ -340,11 +343,13 @@ for i, el in enumerate('helloo'):
 # 3, l
 # 4, o
 # 5, o
+
 Counter
 from collections import Counter
 colors = ['red', 'blue', 'yellow', 'blue', 'red', 'blue']
 counter = Counter(colors)# Counter({'blue': 3, 'red': 2, 'yellow': 1})
 counter.most_common()[0] #('blue', 3)
+
 Named Tuple
 Tuple is an immutable and hashable list.
 Named tuple is its subclass with named elements.
@@ -376,7 +381,7 @@ for name, langs in programmers.items():
       print('\t' + lang)
       
       
-Functions
+#Functions
 *args and **kwargs
 Splat (*) expands a collection into positional arguments, while splatty-splat (**) expands a dictionary into keyword arguments.
 
@@ -471,7 +476,7 @@ def get_counter():
 (1, 2, 3)
 
 
-Modules
+#Modules
 if __name__ == '__main__': # Runs main() if file wasn't imported.
     main()
 import <module_name>
@@ -479,14 +484,15 @@ from <module_name> import <function_name>
 import <module_name> as m
 from <module_name> import <function_name> as m_function
 from <module_name> import *
-Iterators
+
+#Iterators
 In this cheatsheet '<collection>' can also mean an iterator.
 
 <iter> = iter(<collection>)
 <iter> = iter(<function>, to_exclusive)     # Sequence of return values until 'to_exclusive'.
 <el>   = next(<iter> [, default])           # Raises StopIteration or returns 'default' on end.
 
-Generators
+#Generators
 Convenient way to implement the iterator protocol.
 
 def count(start, step):
@@ -497,7 +503,7 @@ def count(start, step):
 >>> next(counter), next(counter), next(counter)
 (10, 12, 14)
 
-Decorators
+#Decorators
 A decorator takes a function, adds some functionality and returns it.
 
 @decorator_name
@@ -521,7 +527,7 @@ def add(x, y):
 Wraps is a helper decorator that copies metadata of function add() to function out().
 Without it 'add.__name__' would return 'out'.
 
-Class
+#Class
 User defined objects are created using the class keyword
 
 class <name>:
@@ -532,7 +538,7 @@ class <name>:
     @classmethod
     def get_class_name(cls):
         return cls.__name__
-Inheritance
+#Inheritance
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -543,7 +549,7 @@ class Employee(Person):
         super().__init__(name, age)
         self.staff_num = staff_num
         
-Multiple Inheritance
+#Multiple Inheritance
 class A: pass
 class B: pass
 class C(A, B): pass
@@ -551,6 +557,7 @@ MRO determines the order in which parent classes are traversed when searching fo
 
 >>> C.mro()
 [<class 'C'>, <class 'A'>, <class 'B'>, <class 'object'>]
+
 Exceptions
 try:
   5/0
@@ -564,6 +571,7 @@ while True:
   else: # code that depends on the try block running successfully should be placed in the else block.
     print('Carry on!')
     break
+    
 Raising Exception
 raise ValueError('some error message')
 Finally
@@ -575,7 +583,7 @@ finally:
   print('All done!')
   
   
-Command Line Arguments
+#Command Line Arguments
 import sys
 script_name = sys.argv[0]
 arguments   = sys.argv[1:]
@@ -584,7 +592,7 @@ Opens a file and returns a corresponding file object.
 
 <file> = open('<path>', mode='r', encoding=None)
 
-Modes
+#Modes
 'r' - Read (default).
 'w' - Write (truncate).
 'x' - Write or fail if the file already exists.
@@ -595,7 +603,7 @@ Modes
 't' - Text mode (default).
 'b' - Binary mode.
 
-File
+#File
 <file>.seek(0)                      # Moves to the start of the file.
 <str/bytes> = <file>.readline()     # Returns a line.
 <list>      = <file>.readlines()    # Returns a list of lines.
